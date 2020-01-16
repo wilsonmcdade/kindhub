@@ -3,7 +3,7 @@ from xkcd import getLatestComic
 import os
 
 app = Flask(__name__)
-calendar = os.environ('calendar')
+calendar = os.getenv('calendar')
 
 @app.route('/')
 @app.route('/calendar')
