@@ -3,12 +3,12 @@ from xkcd import getLatestComic
 import os
 
 app = Flask(__name__)
-calendar = os.getenv('calendar')
+cal = os.getenv('calendar')
 
 @app.route('/')
 @app.route('/calendar')
 def calendar():
-    return render_template('calendar.html',calendar=calendar)
+    return render_template('calendar.html',calendar=cal)
 
 @app.route('/news')
 def news():
