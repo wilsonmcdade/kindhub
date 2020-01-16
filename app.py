@@ -8,7 +8,7 @@ calendar = os.environ.get("calendar")
 @app.route('/')
 @app.route('/calendar')
 def calendar():
-    return render_template('calendar.html',calendar=calendar)
+    return render_template('calendar.html',calendar=calendar.value)
 
 @app.route('/news')
 def news():
