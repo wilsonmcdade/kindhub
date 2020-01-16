@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from xkcd import getLatestComic
+import os
 
 app = Flask(__name__)
 calendar = os.environ.get("calendar")
