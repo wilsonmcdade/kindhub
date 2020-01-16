@@ -1,14 +1,29 @@
-from flask import Flask
-import xkcd
+from flask import Flask, render_template
+from xkcd import getLatestComic
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    return xkcd.getLatestComic()
+@app.route('/calendar')
+def calendar():
+    return render_template('calendar.html')
+
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
+@app.route('/weather')
+def weather():
+    return render_template('weather.html')
+
+@app.route('/xkcd')
+def xkcd():
+    latest = getLatestComic()
+    img = latest.getImageLink()
+    alt_text = latest.getAltText()
+    return render_template('xkcd.html',img=img,alt_text=alt_text)
 
 
 if __name__ == '__main__':
-    ree = xkcd.getLatestComic()
     app.run()
