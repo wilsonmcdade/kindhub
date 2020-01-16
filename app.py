@@ -2,12 +2,12 @@ from flask import Flask, render_template
 from xkcd import getLatestComic
 
 app = Flask(__name__)
-
+calendar = os.environ.get("calendar")
 
 @app.route('/')
 @app.route('/calendar')
 def calendar():
-    return render_template('calendar.html')
+    return render_template('calendar.html',calendar=calendar)
 
 @app.route('/news')
 def news():
