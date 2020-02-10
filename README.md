@@ -28,7 +28,7 @@ to
 app.py()
 ~~~
 
-Modifying your config.conf:
+### Modifying your config.conf:
 
 It's very easy to modify your kindhub by changing things in config.conf.
 The first thing you should do is disable the config widget by changing the true value to false.
@@ -58,6 +58,9 @@ The config for your package must have the following:
 * an enabled value
 * a strname value -- this is what shows up in the navbar on the website
 * a route for your widget -- this is what the navbar links send you to.
+* (optional) config variables
+
+A default config for a package is below:
 
 ~~~
 [widget]
@@ -65,4 +68,5 @@ The config for your package must have the following:
 enabled: true
 strname: Default Widget
 route: /widget
+source: foobar.jpeg
 ~~~
