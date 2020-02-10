@@ -54,10 +54,10 @@ config.conf
 To install a package, the user simply needs to add the relevant part of the package's config.conf to their config.conf and drags and drops templates/ and widgets/ into their directories.
 
 The config for your package must have the following:
-⋅⋅* the name of your widget (matching the name of the python file) in brackets
-⋅⋅* an enabled value
-⋅⋅* a strname value -- this is what shows up in the navbar on the website
-⋅⋅* a route for your widget -- this is what the navbar links send you to.
+* the name of your widget (matching the name of the python file) in brackets
+* an enabled value
+* a strname value -- this is what shows up in the navbar on the website
+* a route for your widget -- this is what the navbar links send you to.
 
 ~~~
 [widget]
