@@ -2,3 +2,4 @@ dev*
 .idea/
 venv/
 *.swp
+*/__pycache__/
