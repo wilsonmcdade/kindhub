@@ -4,25 +4,33 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}">
   </head>
   <body class="bg-dark">
-    <center>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-    <ul class="navbar-nav">
-	     {% for widg, widget in widgets.items() %}
-      <li class="nav-item">
-	      <a class="nav-link" href="{{ widget.route }}">{{ widget.strname }}</a>
-      </li>
-      {% endfor %}
+
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav">
+  	    {% for widg, widget in widgets.items() %}
+          <li class="nav-item">
+    	      <a class="nav-link" href="{{ widget.route }}">{{ widget.strname }}</a>
+          </li>
+        {% endfor %}
+        </ul>
       </nav>
+
       <p></p>
 
-      <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src={{ widgets.gcal.src }}&amp;color=%235A9A08&amp;color=%23227F63&amp;mode=WEEK&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showDate=1&amp;showTz=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <!-- Begin Widget -->
+
+      <center>
+
+        <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src={{ widgets.gcal.src }}&amp;color=%235A9A08&amp;color=%23227F63&amp;mode=WEEK&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showDate=1&amp;showTz=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
       </center>
-      <footer class="bd-footer text-muted">
-  <div class="container-fluid p-3 p-md-5">
-    <p>Designed and built by Wilson McDade</p>
-    <p>mcdade@csh</p>
-  </div>
-</footer>
+
+      <!-- End Widget -->
+
+  <footer class="bd-footer text-muted">
+    <div class="container-fluid p-3 p-md-5">
+      <p>Designed and built by Wilson McDade</p>
+    </div>
+  </footer>
 </body>
 <html>
