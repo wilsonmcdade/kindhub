@@ -39,7 +39,7 @@ ___
 
 ## Developing kindhub packages:
 
-Kindhub has a few default packages including gCal, weather, xkcd, and a news feed. To see an example of an add-on widget package, check out [RPi Light Controller](https://github.com/wilsonmcdade/lights-widget). 
+Kindhub has a few default packages including gCal, weather, xkcd, and a news feed. To see an example of an add-on widget package, check out [Top of Subreddit Widget](https://github.com/wilsonmcdade/subreddit-widget). 
 
 The structure of a package needs to be like so:
 
@@ -52,6 +52,8 @@ config.conf
 ~~~
 
 To install a package, the user simply needs to add the relevant part of the package's config.conf to their config.conf and drags and drops templates/ and widgets/ into their directories.
+
+### Config File
 
 The config for your package must have the following:
 * the name of your widget (matching the name of the python file) in brackets
@@ -69,4 +71,19 @@ enabled: true
 strname: Default Widget
 route: /widget
 source: foobar.jpeg
+~~~
+
+### Python File
+
+A basic widget.py is listed below. This shows the minimum requirement to create a kindhub package.
+
+You must import app and enabled_widgets from __main__, as well as render_template from the flask package. The only other required thing to do is add widgets = enabled_widgets as a parameter in render_template.
+
+~~~
+from __main__ import app, enabled_widgets
+from flask import render_template
+
+@app.route('/route')
+def widget():
+    return render_template('widget.html',widgets=enabled_widgets)
 ~~~
