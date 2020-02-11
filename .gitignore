@@ -1,4 +1,6 @@
-dev-*
+dev*
 .idea/
 venv/
 *.swp
+*/__pycache__/
+__pycache__/

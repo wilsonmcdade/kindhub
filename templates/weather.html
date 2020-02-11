@@ -7,22 +7,15 @@
     <center>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <ul class="navbar-nav">
+	     {% for widg, widget in widgets.items() %}
       <li class="nav-item">
-        <a class="nav-link" href="calendar">Calendar</a>
+	      <a class="nav-link" href="{{ widget.route }}">{{ widget.strname }}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="weather">Weather</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="news">News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="xkcd">XKCD</a>
-      </li>
+      {% endfor %}
       </nav>
       <p></p>
 
-        <script type='text/javascript' src='https://darksky.net/widget/default/43.0592,-77.6122/us12/en.js?width=100%&height=600&title=Henrietta,NY&textColor=888889&bgColor=f8f9fa&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=6d6d6d&ltColor=888889&displaySum=no&displayHeader=yes'></script>
+        <script type='text/javascript' src='https://darksky.net/widget/default/{{ loc }}/us12/en.js?width=100%&height=600&title={{ loc_name }}&textColor=888889&bgColor=f8f9fa&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=6d6d6d&ltColor=888889&displaySum=no&displayHeader=yes'></script>
 
       </center>
       <footer class="bd-footer text-muted">
